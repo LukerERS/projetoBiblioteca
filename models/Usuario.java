@@ -4,6 +4,7 @@ public class Usuario {
     
     private String nome;
     private String cpf;
+    private Long telefone;
 
     public String getNome(){
         return nome;
@@ -20,14 +21,22 @@ public class Usuario {
     public void setCpf(String cpf){
         this.cpf = cpf;
     }
+    
+     public Long getTelefone(){
+        return telefone;
+    }
+    
+    public void setTelefone(Long telefone) {
+        this.telefone = telefone;
+    }
 
     @Override
     public String toString() {
         
         return 
             "Nome: " + nome +
-            " | CPF: " + cpf;
+            " | CPF: " + cpf + 
+            " | Telefone: " + telefone + "\n";
     }
 
-    
 }
