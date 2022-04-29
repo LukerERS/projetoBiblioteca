@@ -42,8 +42,8 @@ public class Principal {
                 break;
 
             case 4:
-               ListarFuncionario listarFuncionario = new ListarFuncionario();
-               listarFuncionario.renderizar();
+               ListarFuncionarios listarFuncionarios = new ListarFuncionarios();
+               listarFuncionarios.renderizar();
                 break;
 
             case 5:
