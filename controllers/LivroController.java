@@ -27,6 +27,10 @@ public class LivroController {
         livros.remove(Livro);
         
     }
+    
+    public void atualizarLivro(Livro livro){
+        livro = Livro.replaceAll(titulo, autor,genero);;
+    }
 
 
 }
