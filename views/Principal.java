@@ -21,7 +21,8 @@ public class Principal {
         System.out.println("|      7 - Registar um aluguel      |");
         System.out.println("|      8 - Alterar status de livro  |");
         System.out.println("|      9 - Devolver livro           |");
-        System.out.println("|      10 - Remover livro           |");
+        System.out.println("|     10 - Remover livro            |");
+        System.out.println("|     11 - Atualizar livro          |");
         System.out.println("|                                   |");
         System.out.println("|             0 - SAIR              |");
         System.out.println("|___________________________________|");
@@ -78,6 +79,11 @@ public class Principal {
                 RemoverLivro removerLivro = new RemoverLivro();
                 removerLivro.renderizar();
                 break;
+                
+            case 11:
+                AtualizarLivro atualizarLivro = new AtualizarLivro();
+                atualizarLivro.renderizar();
+                break; 
 
             case 0:
                 System.out.println("\n\n ---------- SAINDO ----------\n\n");
