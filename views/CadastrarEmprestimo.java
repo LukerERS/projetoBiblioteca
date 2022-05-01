@@ -1,6 +1,7 @@
 package views;
 import utils.Console;
 import controllers.UsuarioController;
+import controllers.DisponibilidadeController;
 import controllers.LivroController;
 import controllers.FuncionarioController;
 import controllers.EmprestimoController;
@@ -17,6 +18,7 @@ public class CadastrarEmprestimo {
         FuncionarioController funcionarioController = new FuncionarioController();
         LivroController livroController = new LivroController();
         EmprestimoController emprestimoController = new EmprestimoController();
+        DisponibilidadeController disponibilidadeController = new DisponibilidadeController();
 
         System.out.println("\n -------- Cadastro de um empréstimo --------");
 
@@ -29,14 +31,22 @@ public class CadastrarEmprestimo {
             Funcionario funcionario = funcionarioController.buscarPorMatricula(matriculafFuncionario);
             if (funcionario != null) {
                 emprestimo.setFuncionario(funcionario);
-        
-
                 String nomeLivro = Console.readString("Digite o nome do Livro: ");
                 Livro livro = livroController.buscarPorLivro(nomeLivro);
+                
                 if(livro !=null) {
+                    
+                    Livro livroDisponivel = disponibilidadeController.buscarPorLivro(nomeLivro);
+                    
+                    if(livroDisponivel == null){
                     emprestimo.setLivro(livro);
                     emprestimoController.cadastrar(emprestimo);
+                    disponibilidadeController.cadastrarDisponibilidade(livro);
                     System.out.println("\n --------Empréstimo realizado com sucesso! --------\n");
+
+                    }else {
+                        System.out.println("Livro não disponivel! ");
+                    }
                     
                 } else {
                     System.out.println("Livro não encontrado! ");

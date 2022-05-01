@@ -20,7 +20,8 @@ public class Principal {
         System.out.println("|      6 - Listar Livros            |");
         System.out.println("|      7 - Registar um aluguel      |");
         System.out.println("|      8 - Alterar status de livro  |");
-        System.out.println("|      9 - Remover livro            |");
+        System.out.println("|      9 - Devolver livro           |");
+        System.out.println("|      10 - Remover livro           |");
         System.out.println("|                                   |");
         System.out.println("|             0 - SAIR              |");
         System.out.println("|___________________________________|");
@@ -59,10 +60,21 @@ public class Principal {
                 break;
 
             case 7:
+                CadastrarEmprestimo cadastrarEmprestimo = new CadastrarEmprestimo();
+                cadastrarEmprestimo.renderizar();
+                break;
 
+            case 8:
+                ListarEmprestimo listarEmprestimo = new ListarEmprestimo();
+                listarEmprestimo.renderizar();
                 break;
 
             case 9:
+                DevolverLivro devolverLivro = new DevolverLivro();
+                devolverLivro.renderizar();
+                break;
+
+            case 10:
                 RemoverLivro removerLivro = new RemoverLivro();
                 removerLivro.renderizar();
                 break;
