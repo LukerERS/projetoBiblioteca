@@ -43,4 +43,7 @@ public class Livro {
             " | Genero: " + genero +
             " | Disponibilidade: " + status + "\n";
     }
+    public static Livro replaceAll(String titulo2, String autor2, String genero2) {
+        return null;
+    }
 }
