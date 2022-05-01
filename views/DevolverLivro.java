@@ -11,6 +11,7 @@ public class DevolverLivro {
         String titulo = Console.readString("Digite o titulo do livro: ");
         Livro livro = disponibilidadeController.buscarPorLivro(titulo);
         if(livro != null){
+            livro.setStatus("Disponível")
             disponibilidadeController.removerLivro(livro);
         System.out.println("\n ---------- Livro devolvido com suceso! ----------");
         }
