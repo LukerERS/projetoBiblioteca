@@ -41,6 +41,7 @@ public class CadastrarEmprestimo {
                     if(livroDisponivel == null){
                     emprestimo.setLivro(livro);
                     emprestimoController.cadastrar(emprestimo);
+                    livro.setStatus("Alugado");
                     disponibilidadeController.cadastrarDisponibilidade(livro);
                     System.out.println("\n --------Empréstimo realizado com sucesso! --------\n");
 
