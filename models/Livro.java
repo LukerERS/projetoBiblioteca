@@ -4,6 +4,7 @@ public class Livro {
     private String titulo;
     private String autor;
     private String genero;
+    private String status=("Disponível");
 
     public String getTitulo(){
         return titulo;
@@ -25,6 +26,13 @@ public class Livro {
     public void setGenero(String genero){
         this.genero = genero;
     }
+    
+    public String getStatus(){
+        return status;
+    }
+    public void setStatus(String status){
+        this.status = status;
+    }
 
     @Override
     public String toString() {
@@ -32,6 +40,7 @@ public class Livro {
         return 
             "Titulo: " + titulo +
             " | Autor: " + autor +
-            " | Genero: " + genero;
+            " | Genero: " + genero +
+            " | Disponibilidade: " + status + "\n";
     }
 }
