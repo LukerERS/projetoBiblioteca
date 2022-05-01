@@ -13,6 +13,8 @@ public class RemoverLivro {
         if(livro != null){
             livroController.removerLivro(livro);
         System.out.println("\n ---------- Livro removido com suceso! ----------");
+        } else {
+            System.out.println("\n -------- Livro não encontrado! --------");
         }
     }
     
