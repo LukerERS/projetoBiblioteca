@@ -23,4 +23,10 @@ public class LivroController {
         return null;
     }
     
+    public void removerLivro(Livro Livro){
+        livros.remove(Livro);
+        
+    }
+
+
 }

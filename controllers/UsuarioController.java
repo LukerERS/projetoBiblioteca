@@ -12,4 +12,13 @@ public class UsuarioController {
     public ArrayList <Usuario> listar() {
         return usuarios;
     }
+
+    public Usuario buscarPorCpf(String cpf) {
+        for(Usuario usuarioLista: usuarios){
+            if (usuarioLista.getCpf().equals(cpf)) {
+                return usuarioLista;
+            }
+        }
+        return null;
+    }
 }
