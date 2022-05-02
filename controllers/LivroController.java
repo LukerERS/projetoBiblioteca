@@ -32,7 +32,7 @@ public class LivroController {
     }
     
     public void atualizarLivro(Livro livro){
-        livro = Livro.replaceAll(titulo, autor,genero);;
+        livro = Livro.replaceAll(titulo, autor, genero);;
     }
 
 
