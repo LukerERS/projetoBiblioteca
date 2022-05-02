@@ -3,6 +3,9 @@ import models.Livro;
 import java.util.ArrayList;
 
 public class LivroController {
+    private String titulo;
+    private String autor;
+    private String genero;
 
     private static ArrayList <Livro> livros = new ArrayList<Livro>();
 
