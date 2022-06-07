@@ -1,15 +1,9 @@
 package models;
-public class Funcionario {
+public class Funcionario extends Pessoa{
     
-    private String nomeF;
+    
     private String matricula;
 
-    public String getNomeF(){
-        return nomeF;
-    }
-    public void setNomeF(String nomeF){
-        this.nomeF = nomeF;
-    }
 
     public String getMatricula(){
         return matricula;
@@ -22,7 +16,8 @@ public class Funcionario {
     public String toString() {
         
         return 
-            "Nome: " + nomeF +
+            "Nome: " + getNome() +
+            "\nCPF: " + getCpf() + 
             " | Matricula: " + matricula;
     }
 }

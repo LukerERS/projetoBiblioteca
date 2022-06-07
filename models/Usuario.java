@@ -1,26 +1,9 @@
 package  models;
 
-public class Usuario {
+public class Usuario extends Pessoa{
     
-    private String nome;
-    private String cpf;
     private Long telefone;
 
-    public String getNome(){
-        return nome;
-    }
-
-    public void setNome(String nome){
-        this.nome = nome;
-    }
-
-    public String getCpf(){
-        return cpf;
-    }
-
-    public void setCpf(String cpf){
-        this.cpf = cpf;
-    }
     
      public Long getTelefone(){
         return telefone;
@@ -34,8 +17,8 @@ public class Usuario {
     public String toString() {
         
         return 
-            "Nome: " + nome +
-            " | CPF: " + cpf + 
+            "Nome: " + getNome() +
+            " | CPF: " + getCpf() + 
             " | Telefone: " + telefone + "\n";
     }
 
