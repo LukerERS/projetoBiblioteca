@@ -28,7 +28,7 @@ public class CadastrarEmprestimo {
             emprestimo.setUsuario(usuario);
 
             String matriculafFuncionario = Console.readString("Digite a matrícula do funcionário: ");
-            Funcionario funcionario = funcionarioController.buscarPorMatricula(matriculafFuncionario);
+            Funcionario funcionario = funcionarioController.buscarPorCpf(matriculafFuncionario);
             if (funcionario != null) {
                 emprestimo.setFuncionario(funcionario);
                 String nomeLivro = Console.readString("Digite o nome do Livro: ");
