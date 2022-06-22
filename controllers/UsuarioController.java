@@ -21,4 +21,9 @@ public class UsuarioController {
         }
         return null;
     }
+
+    public void removerUsuario(Usuario funcionario){
+        usuarios.remove(funcionario);
+        
+    }
 }

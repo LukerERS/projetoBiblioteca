@@ -10,7 +10,8 @@ public class CadastrarFuncionario {
         FuncionarioController funcionarioController = new FuncionarioController();
         System.out.println("\n ---------- Cadastro de Funcionários ----------\n");
         funcionario.setNome(Console.readString("Digite o nome do funcionário: "));
-        funcionario.setMatricula(Console.readString("Digite a matrícula do funcionário: "));
+        funcionario.setCpf(Console.readString("Digite o CPF do funcionário: "));
+        funcionario.setMatricula(Console.readString("Digite a Matricula do Funcionario: "));
         funcionarioController.cadastrar(funcionario);
         System.out.println("\n ---------- Funcionário cadastrado com sucesso! ----------");
  }   

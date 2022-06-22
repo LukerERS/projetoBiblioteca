@@ -13,13 +13,20 @@ public class FuncionarioController{
         return funcionarios;
     }
 
-    public Funcionario buscarPorMatricula(String matricula) {
+    public Funcionario buscarPorCpf(String cpf) {
         for(Funcionario funcionarioLista: funcionarios){
-            if (funcionarioLista.getMatricula().equals(matricula)) {
+            if (funcionarioLista.getCpf().equals(cpf)) {
                 return funcionarioLista;
             }
         }
         return null;
     }
+
+    public void removerFuncionario(Funcionario funcionario){
+        funcionarios.remove(funcionario);
+        
+    }
+
+    
 
 }

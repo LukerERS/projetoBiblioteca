@@ -32,6 +32,6 @@ public class Emprestimo{
         return 
             "Nome Usuario: " + usuario.getNome() +
             " | Titulo livro: " + livro.getTitulo() + 
-            " | Funcionario Responsavel: " + funcionario.getNomeF();
+            " | Funcionario Responsavel: " + funcionario.getNome();
     }
 }
