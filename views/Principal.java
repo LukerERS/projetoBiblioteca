@@ -23,6 +23,7 @@ public class Principal {
         System.out.println("|      9 - Devolver livro           |");
         System.out.println("|     10 - Remover livro            |");
         System.out.println("|     11 - Atualizar livro          |");
+        System.out.println("|     12 - Cancelar Cadastro        |");
         System.out.println("|                                   |");
         System.out.println("|             0 - SAIR              |");
         System.out.println("|___________________________________|");
@@ -83,6 +84,11 @@ public class Principal {
             case 11:
                 AtualizarLivro atualizarLivro = new AtualizarLivro();
                 atualizarLivro.renderizar();
+                break; 
+
+            case 12:
+                CancelarCadastro cancelarCadastro = new CancelarCadastro();
+                cancelarCadastro.renderizar();
                 break; 
 
             case 0:
