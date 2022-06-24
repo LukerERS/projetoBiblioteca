@@ -17,7 +17,7 @@ public class Funcionario extends Pessoa{
         
         return 
             "Nome: " + getNome() +
-            "\nCPF: " + getCpf() + 
+            " | CPF: " + getCpf() + 
             " | Matricula: " + matricula;
     }
 }
