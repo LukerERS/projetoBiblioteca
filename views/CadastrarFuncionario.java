@@ -2,6 +2,7 @@ package views;
 import controllers.FuncionarioController;
 import models.Funcionario;
 import utils.Console;
+import utils.ValidaCPF;
 
 public class CadastrarFuncionario {
 
@@ -12,8 +13,13 @@ public class CadastrarFuncionario {
         funcionario.setNome(Console.readString("Digite o nome do funcionário: "));
         funcionario.setCpf(Console.readString("Digite o CPF do funcionário: "));
         funcionario.setMatricula(Console.readString("Digite a Matricula do Funcionario: "));
-        funcionarioController.cadastrar(funcionario);
-        System.out.println("\n ---------- Funcionário cadastrado com sucesso! ----------");
+        if (ValidaCPF.isCPF(funcionario.getCpf()))
+        if (funcionarioController.cadastrar(funcionario)) {
+            System.out.println("\n---------- Funcionário cadastrado com sucesso! ----------\n");
+        } else {
+            System.out.println("\n---------- CPF já cadastrado! ----------\n");
+        }
+        else System.out.printf("\n ---------- CPF Inválido! ----------\n");
  }   
 
 }
