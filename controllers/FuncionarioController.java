@@ -5,8 +5,12 @@ import java.util.ArrayList;
 public class FuncionarioController{
     private static ArrayList<Funcionario> funcionarios = new ArrayList<Funcionario>();
 
-    public void cadastrar(Funcionario funcionario) {
-            funcionarios.add(funcionario);   
+    public boolean cadastrar(Funcionario funcionario) {
+        if(buscarPorCpf(funcionario.getCpf()) == null){
+            funcionarios.add(funcionario);
+            return true;
+            }
+            return false; 
     }
 
     public ArrayList<Funcionario> listar(){

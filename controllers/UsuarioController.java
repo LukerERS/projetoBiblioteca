@@ -5,8 +5,12 @@ import models.Usuario;
 public class UsuarioController {
     private static ArrayList <Usuario> usuarios = new ArrayList<Usuario>();
 
-    public void cadastrar(Usuario usuario) {
+    public boolean cadastrar(Usuario usuario) {
+        if(buscarPorCpf(usuario.getCpf()) == null){
         usuarios.add(usuario);
+        return true;
+        }
+        return false;
     }
 
     public ArrayList <Usuario> listar() {
