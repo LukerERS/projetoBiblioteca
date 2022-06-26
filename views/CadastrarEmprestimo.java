@@ -10,12 +10,14 @@ import models.Usuario;
 import models.Emprestimo;
 import models.Livro;
 import models.Funcionario;
+import models.ItemLivro;
 
 public class CadastrarEmprestimo implements IViews{
     
     @Override
     public void renderizar(){
         Emprestimo emprestimo = new Emprestimo();
+        ItemLivro item = new ItemLivro();
         UsuarioController usuarioController = new UsuarioController();
         FuncionarioController funcionarioController = new FuncionarioController();
         LivroController livroController = new LivroController();
@@ -28,39 +30,41 @@ public class CadastrarEmprestimo implements IViews{
         Usuario usuario = usuarioController.buscarPorCpf(cpfUsuario);
         if(usuario != null){
             emprestimo.setUsuario(usuario);
-
             String matriculafFuncionario = Console.readString("Digite o CPF do funcionário: ");
             Funcionario funcionario = funcionarioController.buscarPorCpf(matriculafFuncionario);
             if (funcionario != null) {
                 emprestimo.setFuncionario(funcionario);
-                String nomeLivro = Console.readString("Digite o nome do Livro: ");
-                Livro livro = livroController.buscarPorLivro(nomeLivro);
-                
-                if(livro !=null) {
-                    
-                    Livro livroDisponivel = disponibilidadeController.buscarPorLivro(nomeLivro);
-                    
-                    if(livroDisponivel == null){
-                    emprestimo.setLivro(livro);
-                    emprestimoController.cadastrar(emprestimo);
-                    livro.setStatus("Alugado");
-                    disponibilidadeController.cadastrarDisponibilidade(livro);
-                    System.out.println("\n --------Empréstimo realizado com sucesso! --------\n");
 
-                    }else {
-                        System.out.println("Livro não disponivel! ");
-                    }
+                do {
+                    item = new ItemLivro();
+                    String nomeLivro = Console.readString("Digite o nome do Livro: ");
+                    Livro livro = livroController.buscarPorLivro(nomeLivro);
                     
-                } else {
-                    System.out.println("Livro não encontrado! ");
-                }
+                        // emprestimoController.cadastrar(emprestimo);
+                        // emprestimo.getLivros().add(item);
+                            if(livro !=null){
+                                if (livro.getStatus()=="Alugado"){
+                                    System.out.println("Livro Indisponível!");
+                                    } else {
+                                            emprestimo.getLivros().add(item);
+                                            item.setLivro(livro);
+                                            livro.setStatus("Alugado"); 
+                                        }
+                                
+                        } else {    
+                        System.out.println("Livro não existe!");
+                        }
+                        
+                  
+                }while (Console.readString("Deseja alugar mais um livro? (S - Sim || N - Não)\n").toUpperCase().equals("S"));
+                emprestimoController.cadastrar(emprestimo);
+
             } else {
                 System.out.println("Matrícula do funcionário não encontrada! ");
             }
+
         }else {
             System.out.println("Usuário não encontrado! ");
         }
-
     }
 }
-
