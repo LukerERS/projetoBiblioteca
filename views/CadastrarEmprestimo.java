@@ -29,7 +29,7 @@ public class CadastrarEmprestimo implements IViews{
         if(usuario != null){
             emprestimo.setUsuario(usuario);
 
-            String matriculafFuncionario = Console.readString("Digite a matrícula do funcionário: ");
+            String matriculafFuncionario = Console.readString("Digite o CPF do funcionário: ");
             Funcionario funcionario = funcionarioController.buscarPorCpf(matriculafFuncionario);
             if (funcionario != null) {
                 emprestimo.setFuncionario(funcionario);
